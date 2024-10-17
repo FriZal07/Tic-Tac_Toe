@@ -1,0 +1,166 @@
+html,body{
+    height: 100vh;
+    margin: 0;
+}
+
+@font-face{
+    font-family: "roboto";
+    src: url(./Font/Roboto-Regular.ttf)
+}
+
+body{
+    flex: auto;
+
+    display: flex;
+    flex-direction: column;
+    font-family: "roboto";
+}
+
+button{
+    font-family: "roboto";
+}
+
+#header{
+    display: flex;
+    height: 20px;
+    min-height: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+#main{
+    display: flex;
+    flex: auto;
+    justify-content: center;
+
+    background-color: gainsboro;
+
+    #content{
+        width: 1000px;
+
+        display: flex;
+        justify-content: center;
+    }
+}
+/* nesting from content*/
+#display{
+    flex: auto;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    #marks{
+        box-sizing: border-box;
+        background-color: white;
+        width: 400px;
+        flex: 0 1 125px;
+
+        border-radius: 20px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        overflow: hidden;
+
+        #Player1,#Tie,#Player2 {
+            border: none;
+            text-align: center;
+            align-content: center;
+            background-color: rgb(255, 255, 255);
+
+            display: grid;
+            grid-template-rows: 0.7fr 1fr;
+            div{
+                text-align: center;
+                align-content: center;
+            }
+
+            div:first-child{
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+            }
+            div:last-child{
+                border-right: 1px solid black;
+            }
+        }
+        #Player2 > div{
+            border-right: none !important;
+        }
+    }
+         
+    #board{
+        box-sizing: border-box;
+        background-color: white;
+        width: 400px;
+        flex: 0 1 400px;
+
+        border-radius: 20px;
+
+        display: grid;
+        padding: 15px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+
+        div{
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4em;
+        }
+        div:nth-child(3n){
+            border-right: none;
+        }
+        div:nth-child(n){
+            border-bottom: none;
+            border-left: none;
+        }
+        div:nth-child(-n+3){
+            border-top: none;
+        }
+
+
+    }
+    #buttons{
+        box-sizing: border-box;
+        background-color: white;
+        width: 400px;
+        flex: 0 1 100px;
+
+        border-radius: 20px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+
+        button{
+            border: none;
+
+            background-color: rgb(255, 255, 255);
+        }
+
+        button:first-child{
+            border-right: 1px solid black;
+        }
+        button:hover{
+            background-color: rgb(232, 232, 232);
+        }
+    }
+}
+
+
+
+
+
+
+
+#footer{
+    display: flex;
+    height: 20px;
+    min-height: 20px;
+    background-color: rgb(255, 255, 255);
+}
